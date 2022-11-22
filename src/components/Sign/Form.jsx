@@ -35,8 +35,8 @@ export default function Form() {
   return (
     <div className="flex flex-col justify-center w-full md:w-1/2 bg-base-100 px-4">
       <div className="flex flex-col justify-center gap-4 bg-base-200/70 py-12 px-4 rounded-lg">
-        <div className="divider mt-2 mb-10">
-          <h1 className="font-bold text-center text-3xl md:text-4xl">
+        <div className="divider mt-2 mb-8">
+          <h1 className="font-bold text-center text-4xl md:text-5xl">
             ورود یا ثبت نام
           </h1>
         </div>

@@ -3,14 +3,21 @@
 @tailwind utilities;
 
 
-@font-face {
+/* @font-face {
   font-family: 'Yekan Bakh Regular';
   src: url("/fonts/REGULAR.ttf") format(opentype) tech(variations);
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-}
+} */
 
+@font-face {
+  font-family: 'Yekan Bakh Regular';
+  src: url("/fonts/REGULAR-woff.woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
 
 * {
   font-family: 'Yekan Bakh Regular', sans-serif;
