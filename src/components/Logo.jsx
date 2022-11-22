@@ -9,7 +9,7 @@ export default function Logo() {
         className="btn btn-ghost normal-case bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 flex flex-col gap-1"
       >
         <Image
-          src="/LOGO.png"
+          src="/bitfa.png"
           alt="Bitfa"
           width={50}
           height={50}
