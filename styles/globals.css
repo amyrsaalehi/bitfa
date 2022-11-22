@@ -27,6 +27,10 @@
   font-display: swap;
 }
 
+.input-bordered {
+  outline: none !important;
+}
+
 * {
   font-family: 'Yekan Bakh Regular', sans-serif;
 }
