@@ -6,7 +6,7 @@ function App({ Component, pageProps }) {
   return (
     <ThemeProvider themes={["light", "luxury"]} defaultTheme="light">
       <NextNProgress
-        color="#FF9800"
+        color="#E78400"
         startPosition={0.3}
         stopDelayMs={200}
         height={2}

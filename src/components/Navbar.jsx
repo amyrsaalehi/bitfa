@@ -24,11 +24,6 @@ export default function Navbar() {
 
   return (
     <>
-      <Head>
-        <title>بیتفا</title>
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta httpEquiv="Content-Language" content="fa" />
-      </Head>
       <nav
         className={`navbar flex justify-between  ${
           navbar ? "bg-base-100/20 backdrop-blur shadow-lg" : "shadow-none"
