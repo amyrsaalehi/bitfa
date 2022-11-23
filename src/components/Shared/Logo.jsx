@@ -10,7 +10,7 @@ export default function Logo() {
       >
         <Image
           src="/bitfa.png"
-          alt="Bitfa"
+          alt="بیتفا"
           width={50}
           height={50}
           className="rounded-lg"
