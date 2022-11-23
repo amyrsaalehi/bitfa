@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Layout from "src/components/Layout";
 import Form from "src/components/Sign/Form";
-// import FormImageDesktop from "src/images/Form-1.png";
 import FormImageMobile from "src/images/Form-3.png";
 
 export default function SignUpPage() {
