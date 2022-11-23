@@ -24,7 +24,7 @@ const navLinks = [
     Icon: MdOutlineArticle,
   },
   {
-    title: "تحلیل کریپتو",
+    title: "تحلیل رمزارز ها",
     link: "/analysis",
     Icon: TbDeviceAnalytics,
   },
@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <nav
       className={`navbar flex justify-between  ${
-        navbar ? "bg-base-100/20 backdrop-blur shadow-lg" : "shadow-none"
+        navbar ? "bg-base-100/90 shadow-lg" : "shadow-none"
       } fixed top-0 right-0 left-0 z-40 transition-shadow duration-300 max-w-full`}
     >
       <div className="flex items-center flex-1 gap-2 ">

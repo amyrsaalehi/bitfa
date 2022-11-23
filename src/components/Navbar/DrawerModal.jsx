@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { SiAparat } from "react-icons/si";
 
@@ -25,7 +25,7 @@ export default function DrawerModal({ navLinks }) {
         </button>
 
         <button className="relative btn btn-block btn-outline btn-primary">
-          <span>قیمت کریپتو</span>
+          <span>قیمت رمزارز ها</span>
           <div className="absolute -top-0.5 -left-0.5 w-2 h-2 rounded-full animate-ping bg-primary" />
         </button>
 
@@ -35,6 +35,9 @@ export default function DrawerModal({ navLinks }) {
           </a>
           <a className="btn btn-circle btn-ghost">
             <AiFillInstagram size={25} />
+          </a>
+          <a className="btn btn-circle btn-ghost">
+            <FaDiscord size={25} />
           </a>
           <a className="btn btn-circle btn-ghost">
             <AiOutlineTwitter size={28} />
