@@ -56,7 +56,7 @@ export default function Form() {
 
   return (
     <div className="flex flex-col justify-center items-center w-full md:w-1/2 bg-base-100 px-4">
-      <div className="max-w-2xl relative flex flex-col justify-center gap-4 bg-base-200/70 py-12 px-4 rounded-lg">
+      <div className="w-full max-w-[700px] relative flex flex-col justify-center gap-4 bg-base-200/70 py-12 px-4 rounded-lg">
         {step === 1 ? (
           <button
             className="btn btn-circle btn-ghost absolute top-2 left-2"
