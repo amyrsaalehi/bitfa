@@ -10,7 +10,7 @@ export default function CoinCard({ title, description, image, links }) {
 
   if (isMobile) {
     return (
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
+      <div className="card md:max-w-xs bg-base-100 shadow-xl image-full">
         <figure className="relative h-[240px]">
           <Image
             src={image}
@@ -19,7 +19,7 @@ export default function CoinCard({ title, description, image, links }) {
             className="rounded-lg"
             priority
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
             }}
           />
         </figure>
@@ -45,14 +45,14 @@ export default function CoinCard({ title, description, image, links }) {
           src={image}
           alt={title}
           placeholder="blur"
-          className="rounded-lg"
+          className="rounded-lg p-10 pt-12"
           priority
           style={{
             objectFit: "cover",
           }}
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body pt-0">
         <h2 className="card-title f-bold text-2xl px-2 lg:px-4 mb-2">
           {title}
         </h2>

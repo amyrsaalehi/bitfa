@@ -1,8 +1,13 @@
 import CoinCard from "src/components/Analysis/CoinCard";
 import Layout from "src/components/Layout";
-import AnalysisImage from "src/images/Form-3.png";
 import BitcoinImage from "src/images/Bitcoin.png";
 import EthereumImage from "src/images/Ethereum.png";
+import CardanoImage from "src/images/Cardano.png";
+import BinanceImage from "src/images/Binance.png";
+import DodgeImage from "src/images/Dodge.png";
+import ShibaImage from "src/images/Shiba.png";
+import AtmosImage from "src/images/Atmos.png";
+import PolygonImage from "src/images/Polygon.png";
 
 const analysisCards = [
   {
@@ -11,7 +16,7 @@ const analysisCards = [
     image: BitcoinImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال بیتکوین",
+        title: "مشاهده تحلیل های تکنیکال بیتکوین",
         href: "/analysis/technical/bitcoin",
       },
     ],
@@ -22,7 +27,7 @@ const analysisCards = [
     image: EthereumImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال اتریوم",
+        title: "مشاهده تحلیل های تکنیکال اتریوم",
         href: "/analysis/technical/ethereum",
       },
     ],
@@ -30,10 +35,10 @@ const analysisCards = [
   {
     title: "کاردانو",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
-    image: AnalysisImage,
+    image: CardanoImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال کاردانو",
+        title: "مشاهده تحلیل های تکنیکال کاردانو",
         href: "/analysis/technical/bitcoin",
       },
     ],
@@ -41,10 +46,10 @@ const analysisCards = [
   {
     title: "بایننس کوین",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
-    image: AnalysisImage,
+    image: BinanceImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال بایننس کوین",
+        title: "مشاهده تحلیل های تکنیکال بایننس کوین",
         href: "/analysis/technical/bitcoin",
       },
     ],
@@ -52,10 +57,10 @@ const analysisCards = [
   {
     title: "دوج کوین",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
-    image: AnalysisImage,
+    image: DodgeImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال دوج کوین",
+        title: "مشاهده تحلیل های تکنیکال دوج کوین",
         href: "/analysis/technical/bitcoin",
       },
     ],
@@ -63,21 +68,32 @@ const analysisCards = [
   {
     title: "شیبا",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
-    image: AnalysisImage,
+    image: ShibaImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال شیبا",
+        title: "مشاهده تحلیل های تکنیکال شیبا",
         href: "/analysis/technical/bitcoin",
       },
     ],
   },
   {
-    title: "سولانا",
+    title: "اتمس",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
-    image: AnalysisImage,
+    image: AtmosImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال سولانا",
+        title: "مشاهده تحلیل های تکنیکال اتمس",
+        href: "/analysis/technical/bitcoin",
+      },
+    ],
+  },
+  {
+    title: "پالیگان",
+    description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
+    image: PolygonImage,
+    links: [
+      {
+        title: "مشاهده تحلیل های تکنیکال پالیگان",
         href: "/analysis/technical/bitcoin",
       },
     ],
