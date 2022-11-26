@@ -4,7 +4,7 @@ import "styles/globals.css";
 
 function App({ Component, pageProps }) {
   return (
-    <ThemeProvider themes={["light", "luxury"]} defaultTheme="light">
+    <ThemeProvider themes={["light", "halloween"]} defaultTheme="light">
       <NextNProgress
         color="#E78400"
         startPosition={0.3}

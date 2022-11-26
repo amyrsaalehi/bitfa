@@ -22,8 +22,8 @@ module.exports = {
         },
       },
       {
-        luxury: {
-          ...require("daisyui/src/colors/themes")["[data-theme=luxury]"],
+        halloween: {
+          ...require("daisyui/src/colors/themes")["[data-theme=halloween]"],
           primary: "#e78400",
         },
       },

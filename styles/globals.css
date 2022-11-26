@@ -27,7 +27,15 @@
   font-display: swap;
 }
 
-.input-bordered {
+@font-face {
+  font-family: 'Yekan Bakh Fat';
+  src: url("/fonts/FAT.woff");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+.input {
   outline: none !important;
 }
 
@@ -38,4 +46,8 @@
 
 .f-bold {
   font-family: 'Yekan Bakh Bold';
+}
+
+.f-fat {
+  font-family: 'Yekan Bakh Fat';
 }

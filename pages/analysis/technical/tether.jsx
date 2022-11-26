@@ -1,20 +1,14 @@
 import Image from "next/image";
 import Content from "src/components/Coin/Content";
-import Status from "src/components/Coin/Status";
-// import { useRouter } from "next/router";
+import TetherCalculator from "src/components/Coin/TetherCalculator";
 import Layout from "src/components/Layout";
 import Collapse from "src/components/Shared/Collapse";
-import BitcoinImage from "src/images/Bitcoin.png";
+import TetherImage from "src/images/Tether.png";
 import ChartImage from "src/images/Chart.png";
 
-export default function CoinPage() {
-  // const router = useRouter();
-  // const coin = router.query.coin;
-
-  // query the coin to get data related to the coin
-
+export default function TetherPage() {
   return (
-    <Layout title={"تحلیل بیتکوین"}>
+    <Layout title={"تحلیل تتر"}>
       <div className="flex flex-col py-16">
         <div
           className="w-full bg-no-repeat bg-center bg-cover"
@@ -26,8 +20,8 @@ export default function CoinPage() {
             <div className="avatar mb-8">
               <div className="w-48">
                 <Image
-                  src={BitcoinImage}
-                  alt="تحلیل بیتکوین"
+                  src={TetherImage}
+                  alt="تحلیل تتر"
                   className="rounded-full"
                   fill
                   priority
@@ -35,9 +29,9 @@ export default function CoinPage() {
               </div>
             </div>
             <h1 className="f-fat text-white text-center text-3xl mb-8">
-              تحلیل تکنیکال بیت کوین
+              تحلیل تتر
             </h1>
-            <Status />
+            <TetherCalculator />
           </div>
         </div>
         <div className="flex flex-col gap-4 px-2 md:px-12 pt-20">
@@ -54,7 +48,7 @@ export default function CoinPage() {
           ].map((date, idx) => (
             <Collapse
               key={idx}
-              title={<h2 className="text-xl ">{date}</h2>}
+              title={<h2 className="text-xl">{date}</h2>}
               defaultOpen={idx === 0}
               content={<Content />}
             />

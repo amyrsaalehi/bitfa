@@ -23,7 +23,11 @@ export default function Collapse({
         !noborder && "border border-base-300"
       } bg-base-100 rounded-box`}
     >
-      <input type="checkbox" className="peer flex" onChange={changeOpen} />
+      <input
+        type="checkbox"
+        className="peer flex cursor-pointer"
+        onChange={changeOpen}
+      />
       <div
         className={`collapse-title text-base font-medium flex items-center gap-1 ${
           titlePaddingZero && "p-0"

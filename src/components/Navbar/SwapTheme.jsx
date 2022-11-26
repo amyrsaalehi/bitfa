@@ -15,8 +15,8 @@ export default function SwapTheme({ toggle = false }) {
   const changeSwap = (e) => {
     const checked = e.target.checked;
     let t = "light";
-    if (checked) t = theme === "light" ? "luxury" : "light";
-    else t = theme === "light" ? "luxury" : "light";
+    if (checked) t = theme === "light" ? "halloween" : "light";
+    else t = theme === "light" ? "halloween" : "light";
     setTheme(t);
   };
 
@@ -37,7 +37,7 @@ export default function SwapTheme({ toggle = false }) {
           <input
             type="checkbox"
             className="toggle toggle-primary toggle-sm"
-            checked={theme === "luxury"}
+            checked={theme === "halloween"}
             onChange={changeSwap}
           />
         </label>
