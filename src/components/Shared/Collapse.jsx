@@ -18,10 +18,10 @@ export default function Collapse({
   return (
     <div
       className={`w-full collapse ${
-        open ? "collapse-open" : "collapse-close"
+        open ? "collapse-open bg-primary" : "collapse-close"
       } transition collapse-plus ${
         !noborder && "border border-base-300"
-      } bg-base-100 rounded-box`}
+      } bg-base-100 rounded-box hover:bg-primary`}
     >
       <input
         type="checkbox"
@@ -29,13 +29,13 @@ export default function Collapse({
         onChange={changeOpen}
       />
       <div
-        className={`collapse-title text-base font-medium flex items-center gap-1 ${
+        className={`collapse-title text-base font-medium flex items-center gap-1  ${
           titlePaddingZero && "p-0"
         }`}
       >
         {title}
       </div>
-      <div className="collapse-content">{content}</div>
+      <div className="collapse-content bg-base-100">{content}</div>
     </div>
   );
 }

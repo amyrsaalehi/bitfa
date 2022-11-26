@@ -1,7 +1,9 @@
 import CoinCard from "src/components/Analysis/CoinCard";
 import Layout from "src/components/Layout";
+
 import BitcoinImage from "src/images/Bitcoin.png";
 import EthereumImage from "src/images/Ethereum.png";
+import TetherImage from "src/images/Tether.png";
 import CardanoImage from "src/images/Cardano.png";
 import BinanceImage from "src/images/Binance.png";
 import DodgeImage from "src/images/Dodge.png";
@@ -29,6 +31,17 @@ const analysisCards = [
       {
         title: "مشاهده تحلیل های فاندامنتال اتریوم",
         href: "/analysis/fundamental/ethereum",
+      },
+    ],
+  },
+  {
+    title: "تتر",
+    description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
+    image: TetherImage,
+    links: [
+      {
+        title: "مشاهده تحلیل های فاندامنتال تتر",
+        href: "/analysis/fundamental/tether",
       },
     ],
   },

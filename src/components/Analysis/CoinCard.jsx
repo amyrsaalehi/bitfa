@@ -39,7 +39,7 @@ export default function CoinCard({ title, description, image, links }) {
   }
 
   return (
-    <div className="card md:max-w-xs glass bg-base-300 transition-all shadow-sm hover:shadow-lg">
+    <div className="card md:max-w-xs glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer">
       <figure className="relative h-[240px]">
         <Image
           src={image}

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AnalysisCard({ title, image, links }) {
   return (
-    <div className="card max-w-sm glass bg-base-300 transition-all shadow-sm hover:shadow-lg">
+    <div className="card max-w-sm glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer">
       <figure className="relative">
         <Image
           src={image}
