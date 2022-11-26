@@ -38,7 +38,12 @@ export default function AnalysisPage() {
   return (
     <Layout title={"تحلیل رمزارز ها"}>
       <div className="flex flex-col py-20">
-        <h1 className="f-bold text-center text-4xl">تحلیل رمزارز ها</h1>
+        <h1 className="f-fat text-center text-4xl">تحلیل رمزارز ها</h1>
+        <p className="text-center mt-4">
+          طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند که
+          محتوای اصلی صفحات آماده نیست. در نتیجه طرح کلی دید درستی به کار فرما
+          نمیدهد
+        </p>
         <div className="flex justify-center items-center gap-4 flex-wrap md:flex-nowrap mt-12">
           {analysisCards.map((props) => (
             <AnalysisCard key={props.title} {...props} />

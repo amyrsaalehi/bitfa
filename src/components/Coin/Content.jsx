@@ -3,7 +3,15 @@ import ChartImage from "src/images/Chart.png";
 
 export default function Content() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
+      <h3 className="text-center f-bold mt-6 text-3xl">
+        تحلیل بیت کوین جمعه ۹ آذر
+      </h3>
+      <p>
+        طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند که
+        محتوای اصلی صفحات آماده نیست. در نتیجه طرح کلی دید درستی به کار فرما
+        نمیدهد
+      </p>
       <Image
         src={ChartImage}
         alt={"تحلیل بیتکوین"}

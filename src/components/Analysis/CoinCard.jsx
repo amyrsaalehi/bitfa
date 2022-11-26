@@ -40,12 +40,12 @@ export default function CoinCard({ title, description, image, links }) {
 
   return (
     <div className="card md:max-w-xs glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer">
-      <figure className="relative h-[240px]">
+      <figure className="relative h-[150px]">
         <Image
           src={image}
           alt={title}
           placeholder="blur"
-          className="rounded-lg p-14"
+          className="rounded-lg p-24"
           priority
           style={{
             objectFit: "cover",

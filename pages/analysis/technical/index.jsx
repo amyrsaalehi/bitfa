@@ -117,7 +117,12 @@ export default function Technical() {
   return (
     <Layout title={"تحلیل تکنیکال"}>
       <div className="flex flex-col py-24">
-        <h1 className="f-bold text-center text-4xl">تحلیل تکنیکال</h1>
+        <h1 className="f-fat text-center text-4xl">تحلیل تکنیکال</h1>
+        <p className="text-center mt-4">
+          طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند که
+          محتوای اصلی صفحات آماده نیست. در نتیجه طرح کلی دید درستی به کار فرما
+          نمیدهد
+        </p>
         <div className="flex justify-center items-center gap-2 flex-wrap mt-12 px-2">
           {analysisCards.map((props) => (
             <CoinCard key={props.title} {...props} />
