@@ -30,7 +30,7 @@ export default function ModalIcon({
         }}
       >
         <div
-          className={`modal-box sm:max-h-[80vh] ${
+          className={`modal-box sm:max-h-[70vh] ${
             nobg && "bg-transparent p-0"
           } ${fullHeight && "h-full"}`}
         >

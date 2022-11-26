@@ -19,7 +19,7 @@ export default function DrawerModal({ navLinks }) {
           </li>
         ))}
       </ul>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-2">
         <button className="btn btn-block btn-primary">
           شرکت در دوره رایگان
         </button>
@@ -29,7 +29,7 @@ export default function DrawerModal({ navLinks }) {
           <div className="absolute -top-0.5 -left-0.5 w-2 h-2 rounded-full animate-ping bg-primary" />
         </button>
 
-        <div className="flex justify-evenly mt-8">
+        <div className="flex justify-evenly mt-4">
           <a className="btn btn-circle btn-ghost">
             <FaTelegramPlane size={25} />
           </a>

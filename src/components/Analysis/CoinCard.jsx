@@ -45,7 +45,7 @@ export default function CoinCard({ title, description, image, links }) {
           src={image}
           alt={title}
           placeholder="blur"
-          className="rounded-lg p-10 pt-12"
+          className="rounded-lg p-14"
           priority
           style={{
             objectFit: "cover",

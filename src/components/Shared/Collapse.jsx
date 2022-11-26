@@ -19,7 +19,7 @@ export default function Collapse({
     <div
       className={`w-full collapse ${
         open ? "collapse-open" : "collapse-close"
-      } transition collapse-arrow ${
+      } transition collapse-plus ${
         !noborder && "border border-base-300"
       } bg-base-100 rounded-box`}
     >

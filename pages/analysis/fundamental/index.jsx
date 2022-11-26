@@ -16,8 +16,8 @@ const analysisCards = [
     image: BitcoinImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال بیتکوین",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال بیتکوین",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -27,8 +27,8 @@ const analysisCards = [
     image: EthereumImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال اتریوم",
-        href: "/analysis/technical/ethereum",
+        title: "مشاهده تحلیل های فاندامنتال اتریوم",
+        href: "/analysis/fundamental/ethereum",
       },
     ],
   },
@@ -38,8 +38,8 @@ const analysisCards = [
     image: CardanoImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال کاردانو",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال کاردانو",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -49,8 +49,8 @@ const analysisCards = [
     image: BinanceImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال بایننس کوین",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال بایننس کوین",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -60,8 +60,8 @@ const analysisCards = [
     image: DodgeImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال دوج کوین",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال دوج کوین",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -71,8 +71,8 @@ const analysisCards = [
     image: ShibaImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال شیبا",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال شیبا",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -82,8 +82,8 @@ const analysisCards = [
     image: AtmosImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال اتمس",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال اتمس",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -93,8 +93,8 @@ const analysisCards = [
     image: PolygonImage,
     links: [
       {
-        title: "مشاهده تحلیل های تکنیکال پالیگان",
-        href: "/analysis/technical/bitcoin",
+        title: "مشاهده تحلیل های فاندامنتال پالیگان",
+        href: "/analysis/fundamental/bitcoin",
       },
     ],
   },
@@ -102,9 +102,9 @@ const analysisCards = [
 
 export default function Fundamental() {
   return (
-    <Layout title={"تحلیل فاندانتال"}>
+    <Layout title={"تحلیل فاندامنتال"}>
       <div className="flex flex-col py-24">
-        <h1 className="f-bold text-center text-4xl">تحلیل فاندانتال</h1>
+        <h1 className="f-bold text-center text-4xl">تحلیل فاندامنتال</h1>
         <div className="flex justify-center items-center gap-2 flex-wrap mt-12 px-2">
           {analysisCards.map((props) => (
             <CoinCard key={props.title} {...props} />

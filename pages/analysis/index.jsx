@@ -23,7 +23,7 @@ const analysisCards = [
     image: FundamentalImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندانتال",
+        title: "مشاهده تحلیل های فاندامنتال",
         href: "/analysis/fundamental",
       },
       {
