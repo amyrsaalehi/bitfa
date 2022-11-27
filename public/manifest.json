@@ -1,0 +1,16 @@
+{
+  "name": "Bitfa",
+  "short_name": "Bitfa",
+  "icons": [
+    {
+      "src": "/bitfa.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
