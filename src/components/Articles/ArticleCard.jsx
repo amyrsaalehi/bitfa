@@ -25,7 +25,7 @@ export default function ArticleCard({ image, title }) {
       <div className="card-body p-2">
         <h2 className="card-title f-bold text-xl px-2 lg:px-4 mb-2">{title}</h2>
         <div className="px-2 lg:px-4 mb-4"></div>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap justify-between items-center gap-1">
           <Time />
           <Date />
           <Chips title={"پیشرفته"} color="error" noplus />

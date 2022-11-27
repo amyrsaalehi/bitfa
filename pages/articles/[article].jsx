@@ -19,8 +19,15 @@ export default function ArticleDetailsPage() {
           <p className="badge p-3 text-sm">کریپتو</p>
           <p className="badge p-3 text-sm">بیت‌کوین</p>
         </div>
-        <div className="relative w-full max-h-[400px] mt-4">
-          <Image src={ArticleImage} alt={article} className="rounded-3xl" />
+        <div className="relative w-full max-h-[500px] mt-4">
+          <Image
+            src={ArticleImage}
+            alt={article}
+            className="max-h-[500px] rounded-3xl"
+            style={{
+              objectFit: "cover",
+            }}
+          />
         </div>
         <div className="breadcrumbs mt-2">
           <ul>
@@ -72,6 +79,16 @@ export default function ArticleDetailsPage() {
             می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو، استخراج آن، کیف پول
             کریپتو، صرافی کریپتو و نحوه خرید و فروش کریپتو می‌پردازیم.
           </p>
+          <div className="relative w-full max-h-[500px]">
+            <Image
+              src={ArticleImage}
+              alt={article}
+              className="max-h-[500px] rounded-3xl"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
           <h2 className="text-2xl f-bold text-primary">
             رمزنگاری یا کریپتوگرافی چیست ؟
           </h2>
@@ -136,7 +153,7 @@ export default function ArticleDetailsPage() {
             کریپتو، صرافی کریپتو و نحوه خرید و فروش کریپتو می‌پردازیم.
           </p>
         </div>
-        <div className="flex flex-col gap-4 mt-8 bg-base-200/60 p-6 rounded-3xl">
+        <div className="flex flex-col gap-4 mt-8 rounded-3xl">
           <h2 className="text-3xl f-bold">مطالب مرتبط</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <ArticleCard image={ArticleImage} title={"کریپتو چیست؟"} />
