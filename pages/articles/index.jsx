@@ -1,53 +1,53 @@
 import ArticleCard from "src/components/Articles/ArticleCard";
 import Filters from "src/components/Articles/Filters";
 import Layout from "src/components/Layout";
-import ArticleImage from "src/images/Article-Image.png";
+import ArticleImage from "src/images/Article.png";
 
 const articles = [
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
   {
-    title: "ویدیوهای آموزش ویلکام",
+    title: "کریپتو چیست؟",
   },
 ];
 
@@ -59,12 +59,7 @@ export default function ArticlesPage() {
 
         <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
           {articles.map((a, idx) => (
-            <ArticleCard
-              key={idx}
-              image={ArticleImage}
-              title={a.title}
-              description={a.description}
-            />
+            <ArticleCard key={idx} image={ArticleImage} title={a.title} />
           ))}
         </div>
       </div>

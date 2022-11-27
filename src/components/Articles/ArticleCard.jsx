@@ -1,11 +1,15 @@
 import Image from "next/image";
-import { AiOutlineClockCircle } from "react-icons/ai";
-import { MdDateRange } from "react-icons/md";
+import Link from "next/link";
 import Chips from "src/components/Shared/Chips";
+import Date from "./Date";
+import Time from "./TIme";
 
 export default function ArticleCard({ image, title }) {
   return (
-    <div className="card glass bg-base-200/60 transition-all shadow-sm hover:shadow-xl cursor-pointer">
+    <Link
+      href={"/articles/what-is-nft"}
+      className="card glass bg-base-200/60 transition-all shadow-md hover:shadow-xl cursor-pointer"
+    >
       <figure className="relative">
         <Image
           src={image}
@@ -27,24 +31,6 @@ export default function ArticleCard({ image, title }) {
           <Chips title={"پیشرفته"} color="error" noplus />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
-
-const Time = () => {
-  return (
-    <div className="flex items-center gap-1">
-      <AiOutlineClockCircle className="fill-base-content/60" />
-      <span className="text-base-content/60">۷ دقیقه</span>
-    </div>
-  );
-};
-
-const Date = () => {
-  return (
-    <div className="flex items-center gap-1">
-      <MdDateRange className="fill-base-content/60" />
-      <span className="text-base-content/60">۷ آذر ۱۳۹۹</span>
-    </div>
-  );
-};
