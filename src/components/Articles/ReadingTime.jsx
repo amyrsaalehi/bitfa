@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiInfinite } from "react-icons/bi";
 
 export default function ReadingTime() {
   const [range, setRange] = useState(100);
@@ -23,7 +24,9 @@ export default function ReadingTime() {
         <span>۵ دقیقه</span>
         <span>۱۰ دقیقه</span>
         <span>۱۵ دقیقه</span>
-        <span>۲۰ دقیقه</span>
+        <span>
+          <BiInfinite />
+        </span>
       </div>
     </>
   );
