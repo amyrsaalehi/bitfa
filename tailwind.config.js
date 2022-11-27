@@ -5,6 +5,16 @@ module.exports = {
     "./src/**/*.jsx",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1rem",
+        lg: "10rem",
+        xl: "12rem",
+        "2xl": "14rem",
+      },
+    },
     extend: {},
   },
   plugins: [

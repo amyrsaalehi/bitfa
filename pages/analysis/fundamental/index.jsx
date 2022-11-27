@@ -13,12 +13,12 @@ import PolygonImage from "src/images/Polygon.png";
 
 const analysisCards = [
   {
-    title: "بیتکوین",
+    title: "بیت‌کوین",
     description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
     image: BitcoinImage,
     links: [
       {
-        title: "مشاهده تحلیل های فاندامنتال بیتکوین",
+        title: "مشاهده تحلیل های فاندامنتال بیت‌کوین",
         href: "/analysis/fundamental/bitcoin",
       },
     ],

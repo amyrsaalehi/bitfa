@@ -14,7 +14,7 @@ export default function CoinPage() {
   // query the coin to get data related to the coin
 
   return (
-    <Layout title={"تحلیل بیتکوین"}>
+    <Layout title={"تحلیل بیت‌کوین"}>
       <div className="flex flex-col py-16">
         <div
           className="w-full bg-no-repeat bg-center bg-cover"
@@ -27,7 +27,7 @@ export default function CoinPage() {
               <div className="w-48">
                 <Image
                   src={BitcoinImage}
-                  alt="تحلیل بیتکوین"
+                  alt="تحلیل بیت‌کوین"
                   className="rounded-full"
                   fill
                   priority
@@ -35,7 +35,7 @@ export default function CoinPage() {
               </div>
             </div>
             <h1 className="f-fat text-white text-center text-3xl mb-8">
-              تحلیل تکنیکال بیت کوین
+              تحلیل تکنیکال بیت‌کوین
             </h1>
             <p className="pb-10 text-white">
               طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند
@@ -48,7 +48,7 @@ export default function CoinPage() {
             <Status />
           </div>
         </div>
-        <div className="flex flex-col gap-4 px-2 md:px-12 pt-20">
+        <div className="container flex flex-col gap-4 pt-20">
           {[
             "جمعه ۹ آذر ۱۴۰۱",
             "شنبه ۸ آذر ۱۴۰۱",

@@ -42,7 +42,7 @@ export default function TetherPage() {
             <TetherCalculator />
           </div>
         </div>
-        <div className="flex flex-col gap-4 px-2 md:px-12 pt-20">
+        <div className="container flex flex-col gap-4 px-2 md:px-12 pt-20">
           {[
             "جمعه ۹ آذر ۱۴۰۱",
             "شنبه ۸ آذر ۱۴۰۱",

@@ -13,7 +13,7 @@ const analysisCards = [
         href: "/analysis/technical",
       },
       {
-        title: "مشاهده تحلیل تکنیکال بیتکوین",
+        title: "مشاهده تحلیل تکنیکال بیت‌کوین",
         href: "/analysis/technical/bitcoin",
       },
     ],

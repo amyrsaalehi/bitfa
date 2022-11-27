@@ -11,12 +11,12 @@ import PolygonImage from "src/images/Polygon.png";
 export default function handler(req, res) {
   const analysisCards = [
     {
-      title: "بیتکوین",
+      title: "بیت‌کوین",
       description: "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
       image: BitcoinImage,
       links: [
         {
-          title: "مشاهده تحلیل های تکنیکال بیتکوین",
+          title: "مشاهده تحلیل های تکنیکال بیت‌کوین",
           href: "/analysis/technical/bitcoin",
         },
       ],
