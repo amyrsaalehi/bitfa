@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Chips from "src/components/Shared/Chips";
 import Date from "./Date";
-import Time from "./TIme";
+import Time from "./Time";
 
 export default function BitfundaCard({ image, title, defaultOpen }) {
   const router = useRouter();
