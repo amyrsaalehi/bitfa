@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import NewsCard from "src/components/News/NewsCard";
 import Date from "src/components/News/Date";
-import Time from "src/components/News/Time";
+import Time from "src/components/News/TIme";
 import Layout from "src/components/Layout";
 import Chips from "src/components/Shared/Chips";
 import ArticleImage from "src/images/Article.png";

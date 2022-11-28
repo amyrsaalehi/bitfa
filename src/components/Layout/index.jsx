@@ -7,7 +7,8 @@ export default function Layout({ children, title = null }) {
       <Head>
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta httpEquiv="Content-Language" content="fa" />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/bitfa.png"></link>
         <title>{title ? `${title} | بیتفا` : "بیتفا"}</title>
       </Head>
       <Navbar />
