@@ -53,7 +53,7 @@ export default function BitfundaCard({ image, title, defaultOpen }) {
                   ارز <span className="font-bold">GGT</span>
                 </h3>
                 <button className="btn btn-primary btn-outline">
-                  مشاهده فرصت
+                  {open ? "بستن" : "مشاهده"} فرصت
                 </button>
               </div>
               <div className="ml-auto h-full flex flex-col justify-between gap-1 py-2 px-2 lg:px-4">
@@ -118,6 +118,20 @@ export default function BitfundaCard({ image, title, defaultOpen }) {
               که قرار است به آن بپردازیم. در ادامه این فرصت با نحوه شرکت در این
               ایردراپ آشنا خواهیم شد.
             </p>
+            <div className="flex flex-col gap-2">
+              <h4 className="f-fat text-3xl mb-4">
+                قابل ترید در صرافی‌های زیر
+              </h4>
+              <p className="link link-hover text-xl text-primary f-bold">
+                کوینکس
+              </p>
+              <p className="link link-hover text-xl text-primary f-bold">
+                بایننس
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Chips title={"با ۵۰٪ سود بسته شد"} color="success" noplus />
+            </div>
           </div>
         ) : (
           <div className="flex flex-col pt-8">

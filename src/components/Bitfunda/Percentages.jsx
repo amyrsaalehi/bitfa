@@ -5,7 +5,7 @@ export default function Percentages() {
     <div className="flex justify-between flex-wrap sm:flex-nowrap gap-4">
       <div className="flex items-center gap-2">
         <div className="w-[100px]">
-          <PercentageProgressbar targetPerc={93} r={50} g={232} b={133} />
+          <PercentageProgressbar targetPerc={93} r={55} g={206} b={124} />
         </div>
         <h3 className="f-bold text-xl text-success">میزان موفقیت</h3>
       </div>
