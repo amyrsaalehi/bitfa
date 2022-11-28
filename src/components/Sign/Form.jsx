@@ -8,6 +8,7 @@ import {
 import { emailRegExp, mobileRegExp } from "src/helpers/regex";
 import { FcGoogle } from "react-icons/fc";
 import { TiTick } from "react-icons/ti";
+import { useRouter } from "next/router";
 
 const DrawType = () => (
   <div className="flex items-center">
@@ -18,10 +19,13 @@ const DrawType = () => (
 );
 
 export default function Form() {
+  const router = useRouter();
   const [step, setStep] = useState(0);
   const [input, setInput] = useState("");
   const [code, setCode] = useState("");
   const [inputType, setInputType] = useState(<DrawType />);
+
+  console.log(router.query);
 
   const chnageInput = (e) => setInput(e.target.value);
 
@@ -33,7 +37,11 @@ export default function Form() {
         setStep(1);
         break;
       case 1:
-        setStep(0);
+        if (router.query?.referrer) {
+          router.replace(router.query.referrer);
+        } else {
+          router.replace("/");
+        }
         break;
     }
   };

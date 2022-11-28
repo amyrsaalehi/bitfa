@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import NewsCard from "src/components/News/NewsCard";
 import Date from "src/components/News/Date";
-import Time from "src/components/News/TIme";
+import Time from "src/components/News/Time";
 import Layout from "src/components/Layout";
 import Chips from "src/components/Shared/Chips";
 import ArticleImage from "src/images/Article.png";
@@ -179,8 +179,17 @@ export default function ArticleDetailsPage() {
             می‌پردازیم.
           </p>
         </div>
+        <div className="flex justify-end">
+          <Link
+            href="https://news.bitcoin.com"
+            target={"_blank"}
+            className="btn btn-primary lowercase"
+          >
+            news.bitcoin.com
+          </Link>
+        </div>
         <div className="flex flex-col gap-4 mt-8 rounded-3xl">
-          <h2 className="text-3xl f-bold">مطالب مرتبط</h2>
+          <h2 className="text-3xl f-bold">اخبار مرتبط</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <NewsCard
               image={ArticleImage}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Chips from "src/components/Shared/Chips";
 import Date from "./Date";
-import Time from "./TIme";
+import Time from "./Time";
 
 export default function NewsCard({ image, title }) {
   return (

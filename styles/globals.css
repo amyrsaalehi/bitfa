@@ -51,3 +51,11 @@
 .f-fat {
   font-family: 'Yekan Bakh Fat';
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 2px #000;
+}
+
+[data-theme=halloween] .text-shadow {
+  text-shadow: 1px 1px 2px #a6adba;
+}
