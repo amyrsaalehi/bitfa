@@ -21,7 +21,7 @@ const topics = [
 export default function Category() {
   return (
     <>
-      <h3 className="f-bold">دسته‌بندی مقالات</h3>
+      <h3 className="f-bold">دسته‌بندی اخبار</h3>
       <div className="flex flex-wrap gap-1">
         {topics.map((t, i) => (
           <Chips key={i} title={t} />

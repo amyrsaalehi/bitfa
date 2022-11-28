@@ -1,9 +1,8 @@
 import { BiChevronUp } from "react-icons/bi";
 import { BsFillGridFill } from "react-icons/bs";
 import { ImList2 } from "react-icons/im";
-import Category from "src/components/Articles/Category";
-import Difficulity from "src/components/Articles/Difficulity";
-import ReadingTime from "src/components/Articles/ReadingTime";
+import Category from "src/components/News/Category";
+import Importance from "src/components/News/Importance";
 
 export default function Filters() {
   return (
@@ -13,8 +12,7 @@ export default function Filters() {
           <Category />
         </div>
         <div className="flex flex-col gap-2">
-          <Difficulity />
-          <ReadingTime />
+          <Importance />
         </div>
       </div>
 
@@ -43,7 +41,7 @@ export default function Filters() {
         </div>
       </div>
       <div className="container flex justify-between items-center gap-2 mt-8">
-        <h1 className="f-bold text-3xl">مقالات (۴۲۸)</h1>
+        <h1 className="f-bold text-3xl">اخبار (۴۲۸)</h1>
         <select className="select select-bordered w-full max-w-[120px] sm:max-w-[150px]">
           <option selected>انتشار اخیر</option>
           <option>بیشترین بازدید</option>
