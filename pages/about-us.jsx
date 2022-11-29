@@ -223,7 +223,7 @@ export default function AboutUs() {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8">
           {team.map((t) => (
-            <div className="flex flex-col items-center">
+            <div key={t.name} className="flex flex-col items-center">
               <div className="avatar mb-2">
                 <div className="relative w-[150px] mask mask-squircle">
                   <Image key={t.name} src={t.image} alt={t.name} className="" />
