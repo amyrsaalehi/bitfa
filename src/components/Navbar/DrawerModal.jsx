@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
-import { SiAparat } from "react-icons/si";
+import { AiFillYoutube } from "react-icons/ai";
 
 export default function DrawerModal({ navLinks }) {
   return (
@@ -43,7 +43,7 @@ export default function DrawerModal({ navLinks }) {
             <AiOutlineTwitter size={28} />
           </a>
           <a className="btn btn-circle btn-ghost">
-            <SiAparat size={25} />
+            <AiFillYoutube size={25} />
           </a>
         </div>
       </div>

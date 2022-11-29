@@ -38,6 +38,11 @@ const navLinks = [
     link: "/bitfunda",
     Icon: RiBitCoinLine,
   },
+  {
+    title: "درباره‌ما",
+    link: "/news",
+    Icon: BiNews,
+  },
 ];
 
 export default function Navbar() {
