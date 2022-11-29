@@ -35,7 +35,7 @@
   font-display: swap;
 }
 
-.input, .select {
+.input, .select, .textarea {
   outline: none !important;
 }
 

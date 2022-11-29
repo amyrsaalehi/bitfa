@@ -40,7 +40,12 @@ const navLinks = [
   },
   {
     title: "درباره‌ما",
-    link: "/news",
+    link: "/about-us",
+    Icon: BiNews,
+  },
+  {
+    title: "تماس‌با‌ما",
+    link: "/contact-us",
     Icon: BiNews,
   },
 ];
