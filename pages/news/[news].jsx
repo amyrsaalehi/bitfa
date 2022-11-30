@@ -26,7 +26,7 @@ export default function ArticleDetailsPage() {
             alt={article}
             className="max-h-[500px] rounded-3xl"
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
             }}
           />
         </div>

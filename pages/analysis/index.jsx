@@ -2,6 +2,7 @@ import AnalysisCard from "src/components/Analysis/AnalysisCard";
 import Layout from "src/components/Layout";
 import TechnicalImage from "src/images/Technical.png";
 import FundamentalImage from "src/images/Fundamental.png";
+import Link from "next/link";
 
 const analysisCards = [
   {
@@ -37,8 +38,16 @@ const analysisCards = [
 export default function AnalysisPage() {
   return (
     <Layout title={"تحلیل رمزارز ها"}>
-      <div className="flex flex-col py-20">
-        <h1 className="f-fat text-center text-4xl">تحلیل رمزارز ها</h1>
+      <div className="container flex flex-col py-20">
+        <div className="breadcrumbs mt-2">
+          <ul>
+            <li>
+              <Link href="/">خانه</Link>
+            </li>
+            <li className="text-base-content/60">تحلیل رمزارز‌ها</li>
+          </ul>
+        </div>
+        <h1 className="f-fat text-center text-4xl">تحلیل رمزارز‌ها</h1>
         <p className="text-center mt-4">
           طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند که
           محتوای اصلی صفحات آماده نیست. در نتیجه طرح کلی دید درستی به کار فرما

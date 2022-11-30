@@ -38,16 +38,6 @@ const navLinks = [
     link: "/bitfunda",
     Icon: RiBitCoinLine,
   },
-  {
-    title: "درباره‌ما",
-    link: "/about-us",
-    Icon: BiNews,
-  },
-  {
-    title: "تماس‌با‌ما",
-    link: "/contact-us",
-    Icon: BiNews,
-  },
 ];
 
 export default function Navbar() {
@@ -90,6 +80,13 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="items-center gap-4 flex-row-reverse hidden md:flex">
+          <Link
+            href="/coins"
+            className="relative btn btn-outline btn-primary btn-sm"
+          >
+            <span>قیمت رمزارز ها</span>
+            <div className="absolute -top-0.5 -left-0.5 w-2 h-2 rounded-full animate-ping bg-primary" />
+          </Link>
           {navLinks.map(({ title, link }) => (
             <Link
               key={title}

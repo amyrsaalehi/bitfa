@@ -20,14 +20,17 @@ export default function DrawerModal({ navLinks }) {
         ))}
       </ul>
       <div className="w-full flex flex-col gap-2">
-        <button className="btn btn-block btn-primary">
+        <Link href="/" className="btn btn-block btn-primary">
           شرکت در دوره رایگان
-        </button>
+        </Link>
 
-        <button className="relative btn btn-block btn-outline btn-primary">
+        <Link
+          href="/coins"
+          className="relative btn btn-block btn-outline btn-primary"
+        >
           <span>قیمت رمزارز ها</span>
           <div className="absolute -top-0.5 -left-0.5 w-2 h-2 rounded-full animate-ping bg-primary" />
-        </button>
+        </Link>
 
         <div className="flex justify-evenly mt-4">
           <a className="btn btn-circle btn-ghost">

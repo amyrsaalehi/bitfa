@@ -1,12 +1,21 @@
+import Link from "next/link";
 import Layout from "src/components/Layout";
 import VideoCard from "src/components/Videos/VideoCard";
 
 export default function VideosPage() {
   return (
     <Layout title={"ویدیو‌"}>
-      <div className="flex flex-col py-24">
+      <div className="container flex flex-col py-24">
+        <div className="breadcrumbs mt-2">
+          <ul>
+            <li>
+              <Link href="/">خانه</Link>
+            </li>
+            <li className="text-base-content/60">ویدیو‌ها</li>
+          </ul>
+        </div>
         <h1 className="f-fat text-5xl text-center mb-8">ویدیو</h1>
-        <div className="container masonary gap-4">
+        <div className="masonary gap-4">
           {[...Array(12).keys()].map((key) => {
             return <VideoCard key={key} />;
           })}

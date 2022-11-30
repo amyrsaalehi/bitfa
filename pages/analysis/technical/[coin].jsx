@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Content from "src/components/Coin/Content";
 import Status from "src/components/Coin/Status";
 // import { useRouter } from "next/router";
@@ -16,6 +17,20 @@ export default function CoinPage() {
   return (
     <Layout title={"تحلیل بیت‌کوین"}>
       <div className="flex flex-col py-16">
+        <div className="container breadcrumbs my-4">
+          <ul>
+            <li>
+              <Link href="/">خانه</Link>
+            </li>
+            <li>
+              <Link href="/analysis">تحلیل رمزارز‌ها</Link>
+            </li>
+            <li>
+              <Link href="/analysis/technical">تحلیل تکنیکال</Link>
+            </li>
+            <li className="text-base-content/60">تحلیل تکنیکال بیت‌کوین</li>
+          </ul>
+        </div>
         <div
           className="w-full bg-no-repeat bg-center bg-cover"
           style={{

@@ -5,11 +5,26 @@ import Layout from "src/components/Layout";
 import Collapse from "src/components/Shared/Collapse";
 import TetherImage from "src/images/Tether.png";
 import ChartImage from "src/images/Chart.png";
+import Link from "next/link";
 
 export default function TetherPage() {
   return (
     <Layout title={"تحلیل تتر"}>
       <div className="flex flex-col py-16">
+        <div className="container breadcrumbs my-4">
+          <ul>
+            <li>
+              <Link href="/">خانه</Link>
+            </li>
+            <li>
+              <Link href="/analysis">تحلیل رمزارز‌ها</Link>
+            </li>
+            <li>
+              <Link href="/analysis/technical">تحلیل تکنیکال</Link>
+            </li>
+            <li className="text-base-content/60">تحلیل تکنیکال تتر</li>
+          </ul>
+        </div>
         <div
           className="w-full bg-no-repeat bg-center bg-cover"
           style={{
