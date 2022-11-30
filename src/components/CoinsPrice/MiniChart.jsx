@@ -23,6 +23,9 @@ export default function MiniChart() {
         display: false,
       },
     },
+    interaction: {
+      intersect: false,
+    },
     elements: {
       line: {
         tension: 0,
@@ -55,11 +58,11 @@ export default function MiniChart() {
     <Chart
       type="line"
       data={data}
-      className="w-[150px] max-h-[50px]"
+      className="max-w-[150px] max-h-[50px]"
       options={options}
       // options={{
-      //   scales: {
-
+      //   interaction: {
+      //     mode:''
       //   }
       // }}
     />
