@@ -26,7 +26,9 @@ export default function Footer() {
         </div>
         <div>
           <span className="footer-title text-2xl">محصولات</span>
-          <a className="link link-hover">فروشگاه</a>
+          <Link href="/shop" className="link link-hover">
+            فروشگاه
+          </Link>
           <Link href="/bitfunda" className="link link-hover">
             بیتفاندا
           </Link>

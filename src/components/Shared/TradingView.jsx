@@ -1,7 +1,10 @@
 import { useTheme } from "next-themes";
 import Script from "next/script";
 
-export default function TradingView({ Exchange, Ticker }) {
+export default function TradingView({
+  Exchange = "BTCUSDT",
+  Ticker = "BINANCE",
+}) {
   const { theme } = useTheme();
 
   const wrapperStyle = {
@@ -9,6 +12,7 @@ export default function TradingView({ Exchange, Ticker }) {
     height: "100%",
     minHeight: 500,
   };
+
   return (
     <>
       <div id="tradingview-wrapper" style={wrapperStyle}>
@@ -22,12 +26,15 @@ export default function TradingView({ Exchange, Ticker }) {
           }}
         >
           {JSON.stringify({
-            symbol: `BINANCE:BTCUSDT`,
+            symbol: `${Ticker}:${Exchange}`,
+            container_id: "tradingview_87e23",
             width: "100%",
             height: "100%",
             locale: "en",
-            dateRange: "12M",
+            timezone: "Asia/Tehran",
             interval: "D",
+            dateRange: "12M",
+            style: "1",
             colorTheme: theme === "light" ? "light" : "dark",
             trendLineColor: "rgba(232, 154, 50, 1)",
             underLineColor: "rgba(232, 154, 50, 0.3)",
@@ -37,27 +44,6 @@ export default function TradingView({ Exchange, Ticker }) {
             largeChartUrl: "",
           })}
         </Script>
-        {/* <div class="tradingview-widget-container">
-  <div id="tradingview_87e23"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "D",
-  "timezone": "Asia/Tehran",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "container_id": "tradingview_87e23"
-}
-  );
-  </script>
-</div> */}
       </div>
     </>
   );
