@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AiFillShop } from "react-icons/Ai";
+import { AiFillShop } from "react-icons/ai";
 
 export default function QuickAccessCard({
   title = "فروشگاه",
