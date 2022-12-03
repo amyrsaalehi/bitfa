@@ -8,7 +8,7 @@ export default function ShopCard({
 }) {
   return (
     <Link
-      href="/shop/what-is-nft"
+      href="/shop/free-course"
       className="card glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer"
     >
       <figure className="relative w-full p-2 px-3">

@@ -2,8 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { isMobile } from "react-device-detect";
 import useUISafe from "src/helpers/useUISafe";
+import BitcoinImage from "src/images/Bitcoin.png";
 
-export default function CoinCard({ title, description, image, links }) {
+export default function CoinCard({
+  title = "بیت‌کوین",
+  description = "آخرین تحلیل در ۲۰ آبان ۱۴۰۱",
+  image = BitcoinImage,
+  links = null,
+}) {
   const mounted = useUISafe();
 
   if (!mounted) return null;
@@ -28,11 +34,13 @@ export default function CoinCard({ title, description, image, links }) {
             {title}
           </h2>
           <p className="px-2 lg:px-4 mb-4">{description}</p>
-          <div className="card-actions">
-            <Link className="btn btn-block btn-primary" href={links[0].href}>
-              {links[0].title}
-            </Link>
-          </div>
+          {links && (
+            <div className="card-actions">
+              <Link className="btn btn-block btn-primary" href={links[0].href}>
+                {links[0].title}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -57,11 +65,13 @@ export default function CoinCard({ title, description, image, links }) {
           {title}
         </h2>
         <p className="px-2 lg:px-4 mb-4">{description}</p>
-        <div className="card-actions">
-          <Link className="btn btn-block btn-primary" href={links[0].href}>
-            {links[0].title}
-          </Link>
-        </div>
+        {links && (
+          <div className="card-actions">
+            <Link className="btn btn-block btn-primary" href={links[0].href}>
+              {links[0].title}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

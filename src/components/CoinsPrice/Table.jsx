@@ -46,6 +46,7 @@ export default function Table({ items = [] }) {
                         src={item.image}
                         alt={item.name}
                         className="rounded-full"
+                        priority
                       />
                     </div>
                   </div>

@@ -17,7 +17,10 @@ export default function ShopPage() {
           </ul>
         </div>
         <h1 className="f-fat text-5xl text-center my-8 px-4">فروشگاه بیتفا</h1>
-        <div className="relative w-full max-h-[400px] rounded-3xl transition-shadow cursor-pointer shadow-sm hover:shadow-xl overflow-hidden">
+        <Link
+          href="/shop/free-course"
+          className="relative w-full max-h-[400px] rounded-3xl transition-shadow cursor-pointer shadow-sm hover:shadow-xl overflow-hidden"
+        >
           <Image
             src={ArticleImage}
             alt={"محصول"}
@@ -26,7 +29,7 @@ export default function ShopPage() {
               objectFit: "cover",
             }}
           />
-        </div>
+        </Link>
         <div className="masonary gap-4 mt-12 px-4">
           {[...Array(12).keys()].map((key) => {
             return <ShopCard key={key} />;

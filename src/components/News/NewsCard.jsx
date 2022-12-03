@@ -3,8 +3,12 @@ import Link from "next/link";
 import Chips from "src/components/Shared/Chips";
 import Date from "./Date";
 import Time from "./TIme";
+import ArticleImage from "src/images/Article.png";
 
-export default function NewsCard({ image, title }) {
+export default function NewsCard({
+  image = ArticleImage,
+  title = "پیش‌بینی‌های مدیرعامل بایننس از سرمایه‌گذاری دولت‌ها",
+}) {
   return (
     <Link
       href={"/news/what-is-nft"}
@@ -16,7 +20,6 @@ export default function NewsCard({ image, title }) {
           alt={title}
           placeholder="blur"
           className="rounded-lg"
-          priority
           style={{
             objectFit: "cover",
           }}
