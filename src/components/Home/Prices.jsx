@@ -48,7 +48,7 @@ export default function Prices() {
   // if (!mounted) return null;
 
   return (
-    <div className="flex flex-col gap-2 bg-base-100 md:bg-base-200 px-4 pb-4">
+    <div className="flex flex-col gap-2 bg-base-100 md:bg-base-200 px-4 pb-4 min-h-[200px]">
       {/* <h2 className="f-bold text-2xl md:text-3xl text-center">
         لیست قیمت رمزارز‌ها
       </h2> */}

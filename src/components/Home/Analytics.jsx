@@ -28,7 +28,7 @@ const analysisCards = [
 
 export default function Analytics() {
   return (
-    <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-2 mt-8">
+    <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-2 mt-8 min-h-[500px]">
       <h2 className="divider f-bold text-3xl md:text-4xl my-0">تحلیل‌ها</h2>
       {/* <div className="w-full flex gap-8 justify-evenly">
         {analysisCards.map((props) => (

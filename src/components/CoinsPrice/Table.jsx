@@ -47,6 +47,8 @@ export default function Table({ items = [] }) {
                         alt={item.name}
                         className="rounded-full"
                         priority
+                        width={25}
+                        height={25}
                       />
                     </div>
                   </div>

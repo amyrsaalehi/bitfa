@@ -4,22 +4,21 @@ import ArticleImage from "src/images/Article.png";
 
 export default function FirstGrid() {
   return (
-    <div className="max-w-[1280px] mx-auto flex flex-col gap-2">
+    <div className="max-w-[1280px] mx-auto flex flex-col gap-2 h-[350px]">
       <Carousel>
         {Array(10)
           .fill(0)
           .map((_, idx) => (
-            <div key={idx} className="carousel-item max-w-[300px]">
+            <div key={idx} className="carousel-item w-[300px]">
               <figure className="relative">
                 <Image
                   src={ArticleImage}
                   alt={"اولین ایتم"}
                   placeholder="blur"
-                  className="rounded-3xl aspect-square shadow-lg"
+                  width={300}
+                  height={300}
+                  className="rounded-3xl aspect-square shadow-lg object-cover"
                   priority
-                  style={{
-                    objectFit: "cover",
-                  }}
                 />
               </figure>
             </div>

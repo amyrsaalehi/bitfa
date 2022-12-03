@@ -4,13 +4,15 @@ import BitfundaImage from "src/images/Bitfunda.png";
 
 export default function Bitfunda() {
   return (
-    <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-5 gap-2 lg:px-4 mt-8">
+    <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-5 gap-2 lg:px-4 mt-8 min-h-[330px]">
       <div className="col-span-2">
         <div className="relative h-[300px] overflow-hidden">
           <Image
             src={BitfundaImage}
             alt="بیتفاندا"
-            className="rounded-2xl object-contain h-[300px] scale-110"
+            // width={"100%"}
+            // height={300}
+            className="rounded-2xl object-cover h-[300px] scale-105"
           />
         </div>
       </div>

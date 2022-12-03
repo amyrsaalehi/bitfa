@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export default function AnalysisCard({ title, image, links }) {
   return (
-    <div className="card max-w-sm glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer">
+    <div className="card w-sm glass bg-base-300 transition-all shadow-sm hover:shadow-lg cursor-pointer h-[430px]">
       <figure className="relative">
         <Image
           src={image}
           alt={title}
           placeholder="blur"
-          className="max-w-xs max-h-[300px] rounded-lg"
+          className="max-w-xs h-[300px] rounded-lg"
           style={{
             objectFit: "cover",
           }}
