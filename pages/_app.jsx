@@ -1,5 +1,6 @@
 import { ThemeProvider } from "next-themes";
 import NextNProgress from "nextjs-progressbar";
+import { Analytics } from "@vercel/analytics/react";
 import "styles/globals.css";
 
 function App({ Component, pageProps }) {
@@ -16,6 +17,7 @@ function App({ Component, pageProps }) {
         }}
       />
       <Component {...pageProps} />
+      <Analytics />
     </ThemeProvider>
   );
 }
