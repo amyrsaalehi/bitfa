@@ -12,24 +12,24 @@ export default function Slider() {
   if (!mounted) return null;
 
   const next = () => {
-    parentRef.current.scrollBy(500, 0);
+    parentRef.current.scrollBy(300, 0);
   };
 
   const prev = () => {
-    parentRef.current.scrollBy(-500, 0);
+    parentRef.current.scrollBy(-300, 0);
   };
 
   return (
     <div className="relative">
       <div className="hidden md:flex justify-evenly sticky top-full bottom-0 translate-y-1/2 z-20">
         <div
-          className="btn btn-circle btn-primary opacity-50 hover:opacity-100"
+          className="btn btn-circle btn-ghost opacity-50 hover:opacity-100"
           onClick={next}
         >
           <FaChevronRight size={25} />
         </div>
         <div
-          className="btn btn-circle btn-primary opacity-50 hover:opacity-100"
+          className="btn btn-circle btn-ghost opacity-50 hover:opacity-100"
           onClick={prev}
         >
           <FaChevronLeft size={25} />

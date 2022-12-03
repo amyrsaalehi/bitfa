@@ -14,69 +14,6 @@ import HistoryImage from "src/images/History.png";
 import MissionImage from "src/images/Mission.png";
 import TargetImage from "src/images/Target.png";
 
-const team = [
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-  {
-    name: "علیرضا تبریزی",
-    role: "کارشناس سئو",
-    image: Alireza,
-  },
-];
-
 export default function AboutUs() {
   return (
     <Layout title={"درباره ما"}>
@@ -222,18 +159,29 @@ export default function AboutUs() {
           تیم بیتفا
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8">
-          {team.map((t) => (
-            <div key={t.name} className="flex flex-col items-center">
-              <div className="avatar mb-2">
-                <div className="relative w-[150px] mask mask-squircle">
-                  <Image key={t.name} src={t.image} alt={t.name} className="" />
+          {Array(4)
+            .fill({
+              name: "علیرضا تبریزی",
+              role: "کارشناس سئو",
+              image: Alireza,
+            })
+            .map((t) => (
+              <div key={t.name} className="flex flex-col items-center">
+                <div className="avatar mb-2">
+                  <div className="relative w-[150px] mask mask-squircle">
+                    <Image
+                      key={t.name}
+                      src={t.image}
+                      alt={t.name}
+                      className=""
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <p className="f-bold text-lg">{t.name}</p>
-              <p>{t.role}</p>
-            </div>
-          ))}
+                <p className="f-bold text-lg">{t.name}</p>
+                <p>{t.role}</p>
+              </div>
+            ))}
         </div>
 
         <h2 className="mt-16 text-xl md:text-3xl text-center text-primary f-fat">

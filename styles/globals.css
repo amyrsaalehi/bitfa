@@ -35,12 +35,14 @@
   font-display: swap;
 }
 
-.input, .select, .textarea {
-  outline: none !important;
-}
-
 * {
   font-family: 'Yekan Bakh Regular', sans-serif;
+}
+
+.input,
+.select,
+.textarea {
+  outline: none !important;
 }
 
 
