@@ -10,4 +10,7 @@ const withPWA = require('next-pwa')({
 module.exports = withPWA({
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['www.coingecko.com', 'assets.coingecko.com', "www.bitfa.ir"],
+  }
 });

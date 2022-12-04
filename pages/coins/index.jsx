@@ -1,291 +1,12 @@
 import Layout from "src/components/Layout";
-// import DataGrid from "src/components/Shared/DataGrid";
 import Table from "src/components/CoinsPrice/Table";
-import BitcoinImage from "src/images/Bitcoin.png";
 import Link from "next/link";
 
-const list = [
-  {
-    image: BitcoinImage,
-    name: "بیت‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "بیت‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "بیت‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "بیت‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "اتریوم",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "سولانا",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-  {
-    image: BitcoinImage,
-    name: "دوج‌کوین",
-    usdPrice: "112,030,000",
-    rialPrice: "۶۳۷,۳۲۲,۰۰۰",
-    volume: "۲۷ میلیارد دلار",
-    marketCap: "۳۱.۱ میلیارد دلار",
-    daily: 20,
-    weekly: -12.3,
-    route: "bitcoin",
-  },
-];
-
-export default function CoinsPage() {
+export default function CoinsPage({ data }) {
+  const list = Object.values(data);
   return (
     <Layout title={"لیست رمزارز‌ها"}>
-      <div className="container flex flex-col py-24">
+      <div className="max-w-[1280px] mx-auto flex flex-col py-24 px-4">
         <div className="breadcrumbs mt-2">
           <ul>
             <li>
@@ -300,4 +21,28 @@ export default function CoinsPage() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  try {
+    const res = await fetch("https://bitfa.ir/api/coins/1");
+    const data = await res.json();
+
+    return {
+      props: {
+        data,
+      },
+      // revalidate: 10,
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      props: {},
+      redirect: {
+        permanent: false,
+        destination: "/coins",
+      },
+      // revalidate: 10,
+    };
+  }
 }

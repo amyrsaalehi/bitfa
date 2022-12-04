@@ -9,8 +9,10 @@ import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
 import ArticleImage from "src/images/Article.png";
 import TradingView from "src/components/Shared/TradingView";
+import axios from "axios";
 
-export default function CoinPage() {
+export default function CoinPage({ data }) {
+  console.log(data);
   return (
     <Layout title={"قیمت لحظه‌ای بیت‌کوین"}>
       <div className="max-w-[1280px] mx-auto flex flex-col py-16 px-2">
@@ -465,4 +467,49 @@ export default function CoinPage() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps(ctx) {
+  const coin = ctx.params.coin;
+  try {
+    const res = await fetch(`https://bitfa.ir/api/coin/${coin}`);
+    const data = await res.json();
+
+    return {
+      props: { data },
+      revalidate: 10,
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      props: {},
+      redirect: {
+        permanent: false,
+        destination: "/coins",
+      },
+      revalidate: 10,
+    };
+  }
+}
+
+export async function getStaticPaths(ctx) {
+  try {
+    const res = await axios(
+      `https://mkvsssrfopyfrtgmjnac.supabase.co/rest/v1/designers?select=id`
+    );
+    const paths = res.data.map((d) => ({
+      params: { coin: d.id.toString() },
+    }));
+
+    return {
+      paths,
+      fallback: "blocking",
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
 }

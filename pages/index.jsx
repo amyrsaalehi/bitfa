@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="flex flex-col gap-2 py-24">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] opacity-50 blur-3xl bg-gradient-to-r from-primary to-rose-400 -z-50"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] opacity-60 blur-3xl bg-gradient-to-r from-primary/80 via-primary to-primary/80 -z-50"></div>
         <h1 className="f-bold text-center text-4xl md:text-5xl">
           دنیا‌ی رمزارز‌ها در دستان شما
         </h1>
