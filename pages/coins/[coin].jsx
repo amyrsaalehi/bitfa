@@ -1,17 +1,20 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import {
   AiFillInstagram,
   AiFillYoutube,
-  AiOutlineStar,
   AiOutlineTwitter,
   AiOutlineWarning,
 } from "react-icons/ai";
-import { BiMedal } from "react-icons/bi";
 import { FaDiscord, FaTelegramPlane } from "react-icons/fa";
-import { GoChevronUp } from "react-icons/go";
 import Layout from "src/components/Layout";
-import TradingView from "src/components/Shared/TradingView";
+import { separateNumberDigits } from "src/helpers/typography";
+
+const TradingView = dynamic(() => import("src/components/Shared/TradingView"), {
+  ssr: false,
+});
+// import TradingView from "src/components/Shared/TradingView";
 
 export default function CoinPage({ data }) {
   return (
@@ -36,50 +39,63 @@ export default function CoinPage({ data }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="w-full flex flex-col p-6 rounded-xl bg-base-300/30 shadow-lg">
+          <div className="w-full flex flex-col justify-between p-6 rounded-xl bg-base-300/30 shadow-lg">
             <div className="flex justify-between flex-col lg:flex-row gap-4">
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                   <Image
-                    src={`https://bitfa.ir/${data.logo}`}
+                    src={data.logo}
                     alt="بیت‌کوین"
                     priority
                     width={60}
                     height={60}
                   />
-                  <h1 className="text-3xl f-bold text-primary">
+                  <h1 className="text-2xl f-bold text-primary">
                     {data.fa_name}
                   </h1>
-                  <span className="text-base-content/60">(BTC)</span>
-                  <button className="btn btn-ghost btn-circle ml-auto">
+                  <span className="text-base-content/60">
+                    ({data.symbol.toUpperCase()})
+                  </span>
+                  {/* <button className="btn btn-ghost btn-circle ml-auto">
                     <AiOutlineStar size={30} className="text-primary" />
-                  </button>
+                  </button> */}
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
-                    <BiMedal size={20} /> <span className="text-xl">1</span>
-                  </div>
-                  <div className="flex items-center gap-1">
+                  {/* <div className="flex items-center gap-1">
+                    <BiMedal size={20} />{" "}
+                    <span className="text-xl -mb-1">{data.rank}</span>
+                  </div> */}
+                  {/* <div className="flex items-center gap-1">
                     <AiOutlineStar size={20} />{" "}
                     <span className="text-xl">۴,۲۳۲</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="flex flex-col gap-2">
                 <p>قیمت لحظه‌ای</p>
                 <div className="flex items-center gap-4">
                   <p className="flex gap-1">
-                    <span className="text-4xl f-bold">16,892</span>{" "}
+                    <span className="text-4xl f-bold">
+                      {separateNumberDigits(data.price)}
+                    </span>{" "}
                     <span className="text-sm">$</span>
                   </p>
-                  <div className="flex items-center gap-1 text-success">
-                    <p className="text-lg f-bold">2.23%</p>
-                    <GoChevronUp />
+                  <div
+                    className={`flex items-center gap-1 ${
+                      data.percent_change_1h > 0 ? "text-success" : "text-error"
+                    }`}
+                  >
+                    <p dir="ltr">
+                      <span className="text-lg f-bold">
+                        {data.percent_change_1h}
+                      </span>
+                      <span>%</span>
+                    </p>
                   </div>
                 </div>
-                <button className="btn btn-outline btn-primary btn-sm">
+                {/* <button className="btn btn-outline btn-primary btn-sm">
                   آلارم قیمت
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="flex justify-center mt-4">
@@ -132,11 +148,13 @@ export default function CoinPage({ data }) {
                   قیمت {data.fa_name} (دلار)
                 </h3>
                 <p className="flex items-center gap-1">
-                  <span className="f-bold font-bold text-lg">16,892</span>{" "}
+                  <span className="f-bold font-bold text-lg">
+                    {separateNumberDigits(data.price)}
+                  </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   قیمت {data.fa_name} (ریال)
                 </h3>
@@ -144,30 +162,30 @@ export default function CoinPage({ data }) {
                   <span className="f-bold font-bold text-lg">614,565,914</span>{" "}
                   <span className="text-sm">تومان</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">حجم کل بازار</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">
-                    324,283,000,000
+                    {separateNumberDigits(data.volume_24h)}
                   </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">تسلط به بازار</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">16,36.47</span>{" "}
                   <span className="text-sm">%</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   حجم معاملات روزانه
                 </h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">
-                    24,477,900,000
+                    {separateNumberDigits(data.volume_24h)}
                   </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
@@ -182,45 +200,34 @@ export default function CoinPage({ data }) {
                   </p>
                 </div>
                 <p className="flex items-center gap-1">
-                  <span className="f-bold font-bold text-lg">16,370</span>
+                  <span className="f-bold font-bold text-lg">
+                    {separateNumberDigits(data.low_24h)}
+                  </span>
                   <span className="text-sm">$</span>
                   <span className="text-sm">/</span>
-                  <span className="f-bold font-bold text-lg">17,004</span>{" "}
-                  <span className="text-sm">$</span>
-                </p>
-              </div>
-              <div className="flex justify-between border-b py-2">
-                <div className="flex flex-col">
-                  <h3 className="font-bold tex-sm md:text-lg">
-                    پایین ترین/بالاترین
-                  </h3>
-                  <p className="text-sm text-base-content/70">
-                    قیمت 24 ساعت اخیر
-                  </p>
-                </div>
-                <p className="flex items-center gap-1">
-                  <span className="f-bold font-bold text-lg">16,074</span>
-                  <span className="text-sm">$</span>
-                  <span className="text-sm">/</span>
-                  <span className="f-bold font-bold text-lg">17,004</span>{" "}
+                  <span className="f-bold font-bold text-lg">
+                    {separateNumberDigits(data.high_24h)}
+                  </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">رتبه در بازار</h3>
                 <p className="flex items-center gap-1">
-                  <span className="f-bold font-bold text-lg">1</span>{" "}
+                  <span className="f-bold font-bold text-lg">{data.rank}</span>{" "}
                   <span className="text-sm">#</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">اوج قیمت دلاری</h3>
                 <p className="flex items-center gap-1">
-                  <span className="f-bold font-bold text-lg">16,892</span>{" "}
+                  <span className="f-bold font-bold text-lg">
+                    {separateNumberDigits(data.ath_price)}
+                  </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">اوج قیمت ریالی</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">
@@ -228,125 +235,183 @@ export default function CoinPage({ data }) {
                   </span>{" "}
                   <span className="text-sm">تومان</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 1 ساعته</h3>
-                <p className="flex items-center gap-1 text-error">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۱ ساعته</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_1h > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_1h}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 1 روزه</h3>
-                <p className="flex items-center gap-1 text-error">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۱ روزه</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_24h > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_24h}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 7 روزه</h3>
-                <p className="flex items-center gap-1 text-success">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۱ هفته</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_7d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_7d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 14 روزه</h3>
-                <p className="flex items-center gap-1 text-error">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۲ هفته</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_14d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_14d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 30 روزه</h3>
-                <p className="flex items-center gap-1 text-error">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۱ ماهه</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_30d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_30d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات 60 روزه</h3>
-                <p className="flex items-center gap-1 text-success">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۲ ماهه</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_60d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_60d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات شش ماهه</h3>
-                <p className="flex items-center gap-1 text-success">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">تغییرات ۳ ماهه</h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_90d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_90d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">تغییرات دو ساله</h3>
-                <p className="flex items-center gap-1 text-success">
-                  <span className="f-bold font-bold text-lg">0.11</span>{" "}
+                <h3 className="font-bold tex-sm md:text-lg">
+                  تغییرات ۲۰۰ روزه
+                </h3>
+                <p
+                  className={`flex items-center gap-1 ${
+                    data.percent_change_200d > 0 ? "text-success" : "text-error"
+                  }`}
+                  dir="ltr"
+                >
+                  <span className="f-bold font-bold text-lg">
+                    {data.percent_change_200d}
+                  </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">تاریخ پیدایش</h3>
-                <p className="f-bold font-bold text-lg">2009/01/03</p>
+                <p className="f-bold font-bold text-lg">{data.genesis_date}</p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">سختی استخراج</h3>
                 <p className="flex items-center gap-1">
                   <span className="text-sm">T</span>{" "}
                   <span className="f-bold font-bold text-lg">15.78</span>
                 </p>
-              </div>
-              <div className="flex justify-between border-b py-2">
+              </div> */}
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   کل بلاک‌های ساخته‌شده
                 </h3>
                 <p className="f-bold font-bold text-lg">636,110</p>
-              </div>
-              <div className="flex justify-between border-b py-2">
+              </div> */}
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   تراکنش ها بر ثانیه
                 </h3>
                 <p className="f-bold font-bold text-lg">3.81</p>
-              </div>
-              <div className="flex justify-between border-b py-2">
+              </div> */}
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   تراکنش های امروز
                 </h3>
                 <p className="f-bold font-bold text-lg">329,828</p>
-              </div>
-              <div className="flex justify-between border-b py-2">
+              </div> */}
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">سایز بلاک چین</h3>
                 <p className="flex items-center gap-1">
                   <span className="text-sm">Gb</span>{" "}
                   <span className="f-bold font-bold text-lg">195.13</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">الگوریتم هش</h3>
-                <p className="f-bold font-bold text-lg">SHA-256</p>
+                <p className="f-bold font-bold text-lg">
+                  {data.hashing_algorithm}
+                </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">هش ریت</h3>
                 <p className="flex items-center gap-1">
                   <span className="text-sm">m Th/s</span>{" "}
                   <span className="f-bold font-bold text-lg">123.19</span>
                 </p>
-              </div>
-              <div className="flex justify-between border-b py-2">
+              </div> */}
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">زمان ساخت بلاک</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">8.39</span>{" "}
                   <span className="text-sm">دقیقه</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between">
-                <h3 className="font-bold tex-sm md:text-lg">ارز در دسترس/کل</h3>
+                <h3 className="font-bold tex-sm md:text-lg">عرضه کل</h3>
                 <p className="flex items-center gap-1">
-                  <span className="text-sm">M</span>
-                  <span className="f-bold font-bold text-lg">18.4</span>
-                  <span className="text-sm">/</span>
-                  <span className="text-sm">M</span>
-                  <span className="f-bold font-bold text-lg">21</span>{" "}
+                  <span className="f-bold font-bold text-lg">
+                    {separateNumberDigits(data.total_supply)}
+                  </span>{" "}
                 </p>
               </div>
             </div>
@@ -354,7 +419,12 @@ export default function CoinPage({ data }) {
 
           <div className="lg:col-span-2 w-full flex flex-col gap-4">
             <div className="flex flex-col p-6 rounded-xl bg-base-300/30 shadow-lg">
-              <TradingView />
+              <TradingView
+                Ticker={`${data.symbol.toUpperCase()}${
+                  data.symbol.toUpperCase() === "USDT" ? "USD" : "USDT"
+                }`}
+                Exchange={data.tradingview_exchange}
+              />
             </div>
             <div
               className="flex flex-col gap-6 p-6 rounded-xl bg-base-300/30 shadow-lg"
@@ -369,7 +439,7 @@ export default function CoinPage({ data }) {
   );
 }
 
-export async function getStaticProps(ctx) {
+export async function getServerSideProps(ctx) {
   const coin = ctx.params.coin;
   try {
     const res = await fetch(`https://bitfa.ir/api/coin/${coin}`);
@@ -377,7 +447,7 @@ export async function getStaticProps(ctx) {
 
     return {
       props: { data },
-      revalidate: 10,
+      // revalidate: 10,
     };
   } catch (err) {
     console.error(err);
@@ -387,29 +457,52 @@ export async function getStaticProps(ctx) {
         permanent: false,
         destination: "/coins",
       },
-      revalidate: 10,
+      // revalidate: 10,
     };
   }
 }
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(`https://bitfa.ir/api/coins-list`);
-    const data = await res.json();
+// export async function getStaticProps(ctx) {
+//   const coin = ctx.params.coin;
+//   try {
+//     const res = await fetch(`https://bitfa.ir/api/coin/${coin}`);
+//     const data = await res.json();
 
-    const paths = data.slice(0, 50).map((d) => ({
-      params: { coin: d },
-    }));
+//     return {
+//       props: { data },
+//       revalidate: 10,
+//     };
+//   } catch (err) {
+//     console.error(err);
+//     return {
+//       props: {},
+//       redirect: {
+//         permanent: false,
+//         destination: "/coins",
+//       },
+//       revalidate: 10,
+//     };
+//   }
+// }
 
-    return {
-      paths,
-      fallback: "blocking",
-    };
-  } catch (err) {
-    console.error(err);
-    return {
-      paths: [],
-      fallback: "blocking",
-    };
-  }
-}
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch(`https://bitfa.ir/api/coins-list`);
+//     const data = await res.json();
+
+//     const paths = data.slice(0, 50).map((d) => ({
+//       params: { coin: d },
+//     }));
+
+//     return {
+//       paths,
+//       fallback: "blocking",
+//     };
+//   } catch (err) {
+//     console.error(err);
+//     return {
+//       paths: [],
+//       fallback: "blocking",
+//     };
+//   }
+// }

@@ -2,8 +2,8 @@ import { useTheme } from "next-themes";
 import Script from "next/script";
 
 export default function TradingView({
-  Exchange = "BTCUSDT",
-  Ticker = "BINANCE",
+  Ticker = "BTCUSDT",
+  Exchange = "BINANCE",
 }) {
   const { theme } = useTheme();
 
@@ -26,7 +26,7 @@ export default function TradingView({
           }}
         >
           {JSON.stringify({
-            symbol: `${Ticker}:${Exchange}`,
+            symbol: `${Exchange || "BINANCE"}:${Ticker}`,
             container_id: "tradingview_87e23",
             width: "100%",
             height: "100%",
