@@ -43,6 +43,7 @@ export default function CoinPage({ data }) {
                   <Image
                     src={`https://bitfa.ir/${data.logo}`}
                     alt="بیت‌کوین"
+                    priority
                     width={60}
                     height={60}
                   />
