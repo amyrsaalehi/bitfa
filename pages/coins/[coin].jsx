@@ -1,18 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AiOutlineStar, AiOutlineWarning } from "react-icons/ai";
-import Layout from "src/components/Layout";
-import BitcoinImage from "src/images/Bitcoin.png";
-import { GoChevronUp } from "react-icons/go";
-import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
-import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
-import { AiFillYoutube } from "react-icons/ai";
-import ArticleImage from "src/images/Article.png";
-import TradingView from "src/components/Shared/TradingView";
+import {
+  AiFillInstagram,
+  AiFillYoutube,
+  AiOutlineStar,
+  AiOutlineTwitter,
+  AiOutlineWarning,
+} from "react-icons/ai";
 import { BiMedal } from "react-icons/bi";
+import { FaDiscord, FaTelegramPlane } from "react-icons/fa";
+import { GoChevronUp } from "react-icons/go";
+import Layout from "src/components/Layout";
+import TradingView from "src/components/Shared/TradingView";
 
 export default function CoinPage({ data }) {
-  console.log(data);
   return (
     <Layout
       title={data.meta_title}
@@ -395,7 +396,7 @@ export async function getStaticPaths() {
     const res = await fetch(`https://bitfa.ir/api/coins-list`);
     const data = await res.json();
 
-    const paths = data.map((d) => ({
+    const paths = data.slice(0, 50).map((d) => ({
       params: { coin: d },
     }));
 

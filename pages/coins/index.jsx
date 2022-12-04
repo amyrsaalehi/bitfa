@@ -9,8 +9,6 @@ export default function CoinsPage({ data }) {
   const [page, setPage] = useState(data.page);
   const list = Object.values(data.data);
 
-  console.log(page);
-
   const handleChangePage = (p) => () => {
     setPage(p);
     router.replace(`/coins?page=${p}`);
