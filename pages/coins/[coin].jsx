@@ -9,12 +9,16 @@ import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
 import ArticleImage from "src/images/Article.png";
 import TradingView from "src/components/Shared/TradingView";
-import axios from "axios";
+import { BiMedal } from "react-icons/bi";
 
 export default function CoinPage({ data }) {
   console.log(data);
   return (
-    <Layout title={"قیمت لحظه‌ای بیت‌کوین"}>
+    <Layout
+      title={data.meta_title}
+      description={data.meta_description}
+      keywords={data.meta_keywords}
+    >
       <div className="max-w-[1280px] mx-auto flex flex-col py-16 px-2">
         <div className="breadcrumbs mt-4 mb-8">
           <ul>
@@ -24,7 +28,9 @@ export default function CoinPage({ data }) {
             <li>
               <Link href="/coins">قیمت رمزارز‌ها</Link>
             </li>
-            <li className="text-base-content/60">قیمت لحظه‌ای بیت‌کوین</li>
+            <li className="text-base-content/60">
+              قیمت لحظه‌ای {data.fa_name}
+            </li>
           </ul>
         </div>
 
@@ -34,12 +40,14 @@ export default function CoinPage({ data }) {
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                   <Image
-                    src={BitcoinImage}
+                    src={`https://bitfa.ir/${data.logo}`}
                     alt="بیت‌کوین"
                     width={60}
                     height={60}
                   />
-                  <h1 className="text-3xl f-bold text-primary">بیت‌کوین</h1>
+                  <h1 className="text-3xl f-bold text-primary">
+                    {data.fa_name}
+                  </h1>
                   <span className="text-base-content/60">(BTC)</span>
                   <button className="btn btn-ghost btn-circle ml-auto">
                     <AiOutlineStar size={30} className="text-primary" />
@@ -47,8 +55,7 @@ export default function CoinPage({ data }) {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
-                    <AiOutlineStar size={20} />{" "}
-                    <span className="text-xl">۴,۲۳۲</span>
+                    <BiMedal size={20} /> <span className="text-xl">1</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <AiOutlineStar size={20} />{" "}
@@ -94,7 +101,9 @@ export default function CoinPage({ data }) {
 
           <div className="w-full flex flex-col gap-4 p-6 rounded-xl bg-base-300/30 shadow-lg">
             <div className="flex justify-between gap-2">
-              <h2 className="text-xl f-bold text-primary">درباره بیت‌کوین</h2>
+              <h2 className="text-xl f-bold text-primary">
+                درباره {data.fa_name}
+              </h2>
               <button className="flex items-center gap-1 btn btn-outline btn-warning btn-sm">
                 <span className="mt-1">گزارش خطا</span>
                 <AiOutlineWarning size={15} />
@@ -102,10 +111,10 @@ export default function CoinPage({ data }) {
             </div>
             <p className="leading-8 text-justify">
               همه چیز از سال ۲۰۰۸ و انتشار مقاله‌ای که نوعی پول الکترونیک به نام
-              بیت کوین در آن معرفی شده بود آغاز شد. هویت ناشناسی به نام ساتوشی
-              ناکاموتو آغازگر انقلابی بود که سال‌ها بعد به تیتر اول رسانه‌ها
-              تبدیل شد و اقتصاددانان را به بحث‌های نظری گسترده درباره آن وادار
-              کرد.
+              {data.fa_name} در آن معرفی شده بود آغاز شد. هویت ناشناسی به نام
+              ساتوشی ناکاموتو آغازگر انقلابی بود که سال‌ها بعد به تیتر اول
+              رسانه‌ها تبدیل شد و اقتصاددانان را به بحث‌های نظری گسترده درباره
+              آن وادار کرد.
             </p>
           </div>
         </div>
@@ -114,11 +123,11 @@ export default function CoinPage({ data }) {
           <div className="w-full">
             <div className="w-full flex flex-col gap-2 p-6 rounded-xl bg-base-300/30 shadow-lg">
               <h2 className="f-bold text-xl mb-4 text-primary">
-                آنالیز قیمت بیت‌کوین
+                آنالیز {data.fa_name}
               </h2>
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
-                  قیمت بیت کوین (دلار)
+                  قیمت {data.fa_name} (دلار)
                 </h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">16,892</span>{" "}
@@ -127,7 +136,7 @@ export default function CoinPage({ data }) {
               </div>
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
-                  قیمت بیت کوین (ریال)
+                  قیمت {data.fa_name} (ریال)
                 </h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">614,565,914</span>{" "}
@@ -345,123 +354,12 @@ export default function CoinPage({ data }) {
             <div className="flex flex-col p-6 rounded-xl bg-base-300/30 shadow-lg">
               <TradingView />
             </div>
-            <div className="flex flex-col gap-6 p-6 rounded-xl bg-base-300/30 shadow-lg">
-              <h4 className="text-2xl f-bold text-primary">
-                رمزنگاری یا کریپتوگرافی چیست ؟
-              </h4>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <h4 className="text-2xl f-bold text-primary">
-                رمزنگاری یا کریپتوگرافی چیست ؟
-              </h4>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <div className="relative w-full max-h-[500px]">
-                <Image
-                  src={ArticleImage}
-                  alt={"بیت‌کوین"}
-                  className="max-h-[500px] rounded-3xl"
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <h4 className="text-2xl f-bold text-primary">
-                رمزنگاری یا کریپتوگرافی چیست ؟
-              </h4>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <h4 className="text-2xl f-bold text-primary">
-                رمزنگاری یا کریپتوگرافی چیست ؟
-              </h4>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <h4 className="text-2xl f-bold text-primary">
-                رمزنگاری یا کریپتوگرافی چیست ؟
-              </h4>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-              <p className="leading-8 text-justify">
-                تکنولوژی‌های جدید با ورود به هر جامعه‌ای، واژگان و عبارت‌های
-                مختلفی به خود می‌گیرند. با ظهور و گسترش بیت‌کوین، عباراتی مانند
-                کریپتو، کریپتوکارنسی، ارز دیجیتال، رمز ارز و بلاک چین به طور
-                گسترده در بین سرمایه‌گذاران و تریدرهای ایرانی استفاده می‌شوند.
-                در این مقاله ابتدا سوال کریپتو چیست را با بررسی تفاوت‌های آن با
-                عبارات مشابه پاسخ می‌دهیم. سپس، به بررسی فرآیندهای ایجاد کریپتو،
-                استخراج آن، کیف پول کریپتو، صرافی کریپتو و نحوه خرید و فروش
-                کریپتو می‌پردازیم.
-              </p>
-            </div>
+            <div
+              className="flex flex-col gap-6 p-6 rounded-xl bg-base-300/30 shadow-lg"
+              dangerouslySetInnerHTML={{
+                __html: data.description,
+              }}
+            ></div>
           </div>
         </div>
       </div>
@@ -492,13 +390,13 @@ export async function getStaticProps(ctx) {
   }
 }
 
-export async function getStaticPaths(ctx) {
+export async function getStaticPaths() {
   try {
-    const res = await axios(
-      `https://mkvsssrfopyfrtgmjnac.supabase.co/rest/v1/designers?select=id`
-    );
-    const paths = res.data.map((d) => ({
-      params: { coin: d.id.toString() },
+    const res = await fetch(`https://bitfa.ir/api/coins-list`);
+    const data = await res.json();
+
+    const paths = data.map((d) => ({
+      params: { coin: d },
     }));
 
     return {

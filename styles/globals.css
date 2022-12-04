@@ -39,6 +39,10 @@
   font-family: 'Yekan Bakh Regular', sans-serif;
 }
 
+h2,h3,h4,h5,h6,strong {
+  @apply f-bold;
+}
+
 .input,
 .select,
 .textarea {

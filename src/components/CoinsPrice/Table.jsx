@@ -23,7 +23,7 @@ import { separateNumberDigits } from "src/helpers/typography";
 //   symbol: "btc";
 // };
 
-export default function Table({ items = [] }) {
+export default function Table({ items = [], page = 1 }) {
   const router = useRouter();
 
   const changeRoute = (route) => () => router.push(`/coins/${route}`);
@@ -56,7 +56,9 @@ export default function Table({ items = [] }) {
               className="hover hover:cursor-pointer"
               onClick={changeRoute(item.cgc_id)}
             >
-              <td className="p-2 bg-transparent text-center">{idx + 1}</td>
+              <td className="p-2 bg-transparent text-center">
+                {(page - 1) * 50 + (idx + 1)}
+              </td>
               <td className="p-2 bg-transparent">
                 <div className="flex items-center gap-3">
                   <div className="avatar">

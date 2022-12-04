@@ -2,7 +2,12 @@ import Head from "next/head";
 import Navbar from "src/components/Navbar";
 import Footer from "src/components/Footer";
 
-export default function Layout({ children, title = null }) {
+export default function Layout({
+  children,
+  title = null,
+  description = "",
+  keywords = "",
+}) {
   return (
     <>
       <Head>
@@ -11,6 +16,8 @@ export default function Layout({ children, title = null }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/bitfa.png"></link>
         <title>{title ? `${title} | بیتفا` : "بیتفا"}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
       </Head>
       <Navbar />
       <main>{children}</main>
