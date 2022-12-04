@@ -418,7 +418,7 @@ export default function CoinPage({ data }) {
           </div>
 
           <div className="lg:col-span-2 w-full flex flex-col gap-4">
-            <div className="flex flex-col p-6 rounded-xl bg-base-300/30 shadow-lg">
+            <div className="flex flex-col p-6 rounded-xl bg-base-300/30 shadow-lg min-h-[550px]">
               <TradingView
                 Ticker={`${data.symbol.toUpperCase()}${
                   data.symbol.toUpperCase() === "USDT" ? "USD" : "USDT"
