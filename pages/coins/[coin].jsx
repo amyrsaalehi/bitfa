@@ -12,7 +12,7 @@ import Layout from "src/components/Layout";
 import { separateNumberDigits } from "src/helpers/typography";
 
 const TradingView = dynamic(() => import("src/components/Shared/TradingView"), {
-  ssr: false,
+  ssr: true,
 });
 // import TradingView from "src/components/Shared/TradingView";
 

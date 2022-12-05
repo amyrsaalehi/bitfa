@@ -15,14 +15,15 @@ export default function TradingView({
 
   return (
     <>
-      <div id="tradingview-wrapper" style={wrapperStyle}>
+      <div id={`${Ticker}-wrapper`} style={wrapperStyle}>
         <Script
-          id="tradingview-widget"
+          id={`${Ticker}-widget`}
+          async
           src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
           onLoad={() => {
             document
-              .getElementById("tradingview-wrapper")
-              .appendChild(document.getElementById("tradingview-widget"));
+              .getElementById(`${Ticker}-wrapper`)
+              .appendChild(document.getElementById(`${Ticker}-widget`));
           }}
         >
           {JSON.stringify({
