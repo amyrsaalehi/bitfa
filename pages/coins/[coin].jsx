@@ -17,6 +17,7 @@ const TradingView = dynamic(() => import("src/components/Shared/TradingView"), {
 // import TradingView from "src/components/Shared/TradingView";
 
 export default function CoinPage({ data }) {
+  console.log(data);
   return (
     <Layout
       title={data.meta_title}
@@ -167,7 +168,7 @@ export default function CoinPage({ data }) {
                 <h3 className="font-bold tex-sm md:text-lg">حجم کل بازار</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">
-                    {separateNumberDigits(data.volume_24h)}
+                    {separateNumberDigits(data.total_volume)}
                   </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
@@ -180,17 +181,15 @@ export default function CoinPage({ data }) {
                 </p>
               </div> */}
               <div className="flex justify-between border-b py-2">
-                <h3 className="font-bold tex-sm md:text-lg">
-                  حجم معاملات روزانه
-                </h3>
+                <h3 className="font-bold tex-sm md:text-lg">ارزش بازار</h3>
                 <p className="flex items-center gap-1">
                   <span className="f-bold font-bold text-lg">
-                    {separateNumberDigits(data.volume_24h)}
+                    {separateNumberDigits(data.market_cap)}
                   </span>{" "}
                   <span className="text-sm">$</span>
                 </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              <div className="flex justify-between flex-wrap gap-4 border-b py-2">
                 <div className="flex flex-col">
                   <h3 className="font-bold tex-sm md:text-lg">
                     پایین ترین/بالاترین
@@ -245,7 +244,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_1h}
+                    {Number(data.percent_change_1h).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
@@ -259,7 +258,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_24h}
+                    {Number(data.percent_change_24h).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
@@ -273,7 +272,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_7d}
+                    {Number(data.percent_change_7d).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
@@ -287,7 +286,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_14d}
+                    {Number(data.percent_change_14d).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
@@ -301,7 +300,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_30d}
+                    {Number(data.percent_change_30d).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
@@ -315,12 +314,12 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_60d}
+                    {Number(data.percent_change_60d).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
               </div>
-              <div className="flex justify-between border-b py-2">
+              {/* <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">تغییرات ۳ ماهه</h3>
                 <p
                   className={`flex items-center gap-1 ${
@@ -333,7 +332,7 @@ export default function CoinPage({ data }) {
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>
-              </div>
+              </div> */}
               <div className="flex justify-between border-b py-2">
                 <h3 className="font-bold tex-sm md:text-lg">
                   تغییرات ۲۰۰ روزه
@@ -345,7 +344,7 @@ export default function CoinPage({ data }) {
                   dir="ltr"
                 >
                   <span className="f-bold font-bold text-lg">
-                    {data.percent_change_200d}
+                    {Number(data.percent_change_200d).toFixed(2)}
                   </span>{" "}
                   <span className="text-sm">%</span>
                 </p>

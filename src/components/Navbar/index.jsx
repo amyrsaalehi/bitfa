@@ -61,8 +61,8 @@ export default function Navbar() {
   return (
     <nav
       className={`navbar flex justify-between  ${
-        navbar ? "bg-base-100 shadow-lg" : "shadow-none"
-      } fixed top-0 right-0 left-0 z-40 transition-shadow duration-300 max-w-full`}
+        navbar ? "bg-base-100 shadow-lg" : "shadow-none bg-base-100/0"
+      } fixed top-0 right-0 left-0 z-40 transition-all duration-300 max-w-full`}
     >
       <div className="flex items-center flex-1 gap-2 ">
         {/* <SearchInput /> */}
