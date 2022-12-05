@@ -7,7 +7,7 @@ export default function Chips({ id, title, color = "base", noplus = false }) {
   if (color === "base") {
     const category = router.query?.category;
     // if (category === undefined) return null;
-    const selected = category === id.toString();
+    const selected = category == id?.toString();
     return (
       <div
         className={`flex justify-center items-center gap-1 max-w-fit px-4 py-2 rounded-3xl transition-colors ${
