@@ -73,8 +73,8 @@ export async function getServerSideProps(ctx) {
     }
     const url =
       category === "0"
-        ? `https://bitfa.ir/api/category-posts?page=${page}&ord=${ord}`
-        : `https://bitfa.ir/api/category-posts/${category}?page=${page}&ord=${ord}`;
+        ? `https://bitfa.ir/api/category-posts?page=${page}&ord=${ord}&type=مقاله`
+        : `https://bitfa.ir/api/category-posts/${category}?page=${page}&ord=${ord}&type=مقاله`;
     const articlesRes = await fetch(url);
     const articlesData = await articlesRes.json();
 

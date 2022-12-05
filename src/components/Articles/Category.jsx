@@ -1,9 +1,12 @@
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Chips from "src/components/Shared/Chips";
 
 export default function Category() {
+  const router = useRouter();
+  const category = router.query.category;
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -27,7 +30,7 @@ export default function Category() {
       <h3 className="f-bold">دسته‌بندی مقالات</h3>
       <div className="flex flex-wrap gap-1">
         <Link href={`/articles?page=1&category=0&ord=latest`} replace>
-          <Chips id={0} title={"همه"} noplus />
+          <Chips id={0} title={"همه"} noplus selected={"0" === category} />
         </Link>
         {categories.map((t) => (
           <Link
@@ -35,7 +38,12 @@ export default function Category() {
             href={`/articles?page=1&category=${t.id}&ord=latest`}
             replace
           >
-            <Chips id={t.id} title={t.name} noplus />
+            <Chips
+              id={t.id}
+              title={t.name}
+              noplus
+              selected={t.id?.toString() === category}
+            />
           </Link>
         ))}
       </div>
